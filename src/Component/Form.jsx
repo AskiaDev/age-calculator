@@ -4,13 +4,18 @@ import { useState } from "react";
 
 const FormContainer = styled.div`
   width: 100%;
-  max-width: 50%; /* Use the full available width */
-  height: auto; /* Let the height adjust based on content */
-  padding: 2% 4%; /* Use percentage for padding */
+  max-width: 50%;
+  height: auto;
+  padding: 2% 4%;
   background-color: white;
   border-radius: 1rem 1rem 25rem 1rem;
-  margin: 0 auto; /* Center the container horizontally */
+  margin: 0 auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    max-width: 90%; /* Adjust for smaller screens */
+    padding: 4% 8%; /* Increase padding for mobile */
+  }
 `;
 
 const FormWrapper = styled.div`
@@ -36,6 +41,10 @@ const Input = styled.input`
 
   &::placeholder {
     font-weight: 900;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Take up full width on mobile */
   }
 `;
 
